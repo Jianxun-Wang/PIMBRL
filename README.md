@@ -2,10 +2,10 @@
 This repo provides code for our paper [Physics-informed Dyna-style model-based deep reinforcement learning for dynamic control](https://royalsocietypublishing.org/doi/pdf/10.1098/rspa.2021.0618)  ([arXiv version](https://arxiv.org/abs/2108.00128)), implemented in Pytorch.
 * Authors: [Xin-Yang Liu](https://scholar.google.com/citations?user=DI9KTLoAAAAJ&hl=en), [Jian-Xun Wang](https://scholar.google.com/citations?user=1cXHUD4AAAAJ&hl=en)
 
-<img align="center" src="docs/uncontrolled.png#gh-light-mode-only">
+<img align="center" src="/docs/uncontrolled.png">
 <p align="center"> An uncontrolled KS environment. </p>
 
-<img align="center" src="docs/controlled.png#gh-light-mode-only">
+<img align="center" src="/docs/controlled.png">
 <p align="center"> A RL controlled KS environment. </p>
 
 
@@ -59,4 +59,4 @@ If you find this repo useful in your research, please consider citing our paper:
 }
 ```
 ## Acknoledgements
-The code in `src/RLalgo` is inspired by OpenAI's [spiningup](https://spinningup.openai.com/en/latest/).
+The code in `src/RLalgo` is inspired by OpenAI's [spinningup](https://spinningup.openai.com/en/latest/).

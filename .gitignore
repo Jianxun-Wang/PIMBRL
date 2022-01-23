@@ -1,6 +1,7 @@
 *.pyc
 
 *.png
+!docs/*.png
 *.jpg
 *.gif
 *.pdf
