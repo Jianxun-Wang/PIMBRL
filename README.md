@@ -1,17 +1,25 @@
 # PIMBRL
 This repo provides code for our paper [Physics-informed Dyna-style model-based deep reinforcement learning for dynamic control](https://royalsocietypublishing.org/doi/pdf/10.1098/rspa.2021.0618)  ([arXiv version](https://arxiv.org/abs/2108.00128)), implemented in Pytorch.
+* Authors: Xin-Yang Liu \[ [Google Scholar](https://scholar.google.com/citations?user=DI9KTLoAAAAJ&hl=en) \], Jian-Xun Wang \[ [Google Scholar](https://scholar.google.com/citations?user=1cXHUD4AAAAJ&hl=en) | [Homepage](http://sites.nd.edu/jianxun-wang/) \]
 
 
-<img align="center" src="/docs/uncontrolled.png">
-<p align="center"> An uncontrolled KS environment. </p>
+<p align="center">
+<img align="center" width="600" src="/docs/uncontrolled.png">
+</p>
+<p align="center" > An uncontrolled KS environment. </p>
 
-<img align="center" src="/docs/controlled.png">
+<p align="center">
+<img align="center" width="600" src="/docs/controlled.png">
+</p>
 <p align="center"> A RL controlled KS environment. </p>
 
-<img align="center" src="/docs/performance.png">
-<p align="center"> PiMBRL performance vs. Model-free RL baseline. (Non physics-informed Model-based RL failed to converge, thus not shown in this figure) </p>
+<p align="center">
+  <img width="400" src="/docs/performance.png">         
+</p>
+<p align="center" > PiMBRL performance vs. Model-free RL baseline.</p>
+<p align="center"> (Vanilla Model-based RL failed to converge, thus not shown in this figure). </p>
 
-* Authors: Xin-Yang Liu \[ [Google Scholar](https://scholar.google.com/citations?user=DI9KTLoAAAAJ&hl=en) \], Jian-Xun Wang \[ [Google Scholar](https://scholar.google.com/citations?user=1cXHUD4AAAAJ&hl=en) | [Homepage](http://sites.nd.edu/jianxun-wang/) \]
+
 
 
 ## Abstract
