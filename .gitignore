@@ -1,0 +1,10 @@
+*.pyc
+
+*.png
+*.jpg
+*.gif
+*.pdf
+
+*.npy
+
+*settings.json
