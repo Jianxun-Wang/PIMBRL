@@ -1,6 +1,6 @@
 # PIMBRL
 This repo provides code for our paper [Physics-informed Dyna-style model-based deep reinforcement learning for dynamic control](https://royalsocietypublishing.org/doi/pdf/10.1098/rspa.2021.0618)  ([arXiv version](https://arxiv.org/abs/2108.00128)), implemented in Pytorch.
-* Authors: [Xin-Yang Liu](https://scholar.google.com/citations?user=DI9KTLoAAAAJ&hl=en), [Jian-Xun Wang](https://scholar.google.com/citations?user=1cXHUD4AAAAJ&hl=en)
+
 
 <img align="center" src="/docs/uncontrolled.png">
 <p align="center"> An uncontrolled KS environment. </p>
@@ -8,6 +8,10 @@ This repo provides code for our paper [Physics-informed Dyna-style model-based d
 <img align="center" src="/docs/controlled.png">
 <p align="center"> A RL controlled KS environment. </p>
 
+<img align="center" src="/docs/performance.png">
+<p align="center"> PiMBRL performance vs. Model-free RL baseline. (Non physics-informed Model-based RL failed to converge, thus not shown in this figure) </p>
+
+* Authors: Xin-Yang Liu \[ [Google Scholar](https://scholar.google.com/citations?user=DI9KTLoAAAAJ&hl=en) \], Jian-Xun Wang \[ [Google Scholar](https://scholar.google.com/citations?user=1cXHUD4AAAAJ&hl=en) | [Homepage](http://sites.nd.edu/jianxun-wang/) \]
 
 
 ## Abstract
