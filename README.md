@@ -1,4 +1,4 @@
-# PIMBRL
+# PiMBRL
 This repo provides code for our paper [Physics-informed Dyna-style model-based deep reinforcement learning for dynamic control](https://royalsocietypublishing.org/doi/pdf/10.1098/rspa.2021.0618)  ([arXiv version](https://arxiv.org/abs/2108.00128)), implemented in Pytorch.
 * Authors: Xin-Yang Liu \[ [Google Scholar](https://scholar.google.com/citations?user=DI9KTLoAAAAJ&hl=en) \], Jian-Xun Wang \[ [Google Scholar](https://scholar.google.com/citations?user=1cXHUD4AAAAJ&hl=en) | [Homepage](http://sites.nd.edu/jianxun-wang/) \]
 
@@ -70,5 +70,10 @@ If you find this repo useful in your research, please consider citing our paper:
   publisher={The Royal Society}
 }
 ```
+
+## Problems
+If you find any bugs in the code or have trouble in running PiMBRL in your machine, you are very welcome to [open an issue](https://github.com/Jianxun-Wang/PIMBRL/issues) in this repository.
+
+
 ## Acknoledgements
 The code in `src/RLalgo` is inspired by OpenAI's [spinningup](https://spinningup.openai.com/en/latest/).
