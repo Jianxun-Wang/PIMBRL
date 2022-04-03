@@ -28,7 +28,6 @@ def cnn1d():
     raise NotImplementedError
 
 
-# NET_TYPE = {'mlp':mlp,'cnn1d':cnn1d}
 
 ######################### Actor Network #########################
 class MLPActor(nn.Module):

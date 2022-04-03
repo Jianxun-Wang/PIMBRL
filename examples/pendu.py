@@ -6,6 +6,7 @@ from src.NN.RL import model
 from RLalgo.td3 import TD3
 
 if __name__=='__main__':
+    from src.NN.RL.base import MLPActor, MLPQ
     import os
     torch.manual_seed(10)
     np.random.seed(10)
@@ -17,8 +18,11 @@ if __name__=='__main__':
     realenv = pendulum()#lambda:gym.make('Pendulum-v0')
     fakeenv = model.fake_pendu_env(env_batchsize)
     os.chdir('/home/lxy/store/RL/pendulum/td3/')
-    RLinp = {"env":fakeenv,'net_type':'mlp', 'act_space_type':'c',
-            'ac_kwargs':dict(activation=nn.ReLU,
+    RLinp = {"env":fakeenv,
+             'Actor':MLPActor,
+             'Q': MLPQ, 
+             'act_space_type':'c',
+             'a_kwargs':dict(activation=nn.ReLU,
                         hidden_sizes=[256]*2,
                         output_activation=nn.Tanh),
             'ep_type':'inf', 'max_ep_len':200,

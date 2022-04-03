@@ -8,7 +8,7 @@ from src.NN import model
 from RLalgo.td3 import TD3
 
 if __name__=='__main__':
-    
+    from src.NN.RL.base import MLPActor, MLPQ
     random.seed(0)
     torch.manual_seed(0)
     np.random.seed(0)
@@ -37,9 +37,10 @@ if __name__=='__main__':
 
     # define the RL network and other hyperparameters
     RLinp = {"env":fakeenv, # the surogate environment defined above
-            'net_type':'mlp',  # the type of network, MLP or CNN or anything else defined in src/NN/base.py
+            'Actor':MLPActor,  # the type of policy network, src/NN/RL
+            'Q': MLPQ, # the type of value function network, src/NN/RL
             'act_space_type':'c', # the type of action space, 'c' for continuous, 'd' for discrete
-            'ac_kwargs':dict(activation=nn.ReLU,
+            'a_kwargs':dict(activation=nn.ReLU,
                         hidden_sizes=[256]*2,
                         output_activation=nn.Tanh),# the hyperparameters of the network
             'ep_type':'inf', # the type of episode, 'inf' for infinite, 'finite' for finite (only inf is supported for now)
@@ -48,7 +49,7 @@ if __name__=='__main__':
             'replay_size':int(5e5) # the max size of the replay buffer
             }
     RL = TD3(**RLinp)
-
+    
     # define the dyna hyperparameters
     mb = dyna(RL,
             realenv,
