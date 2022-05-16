@@ -1,13 +1,11 @@
-import gym
-from NN.RL import core,model
-import RLalgo as rla
+from src.NN import model
 from utility.RL import *
 from envs import *
 from ModelBase.dyna import dyna
 from torch.utils.data import DataLoader
 
 class phyburgers(dyna):
-    def __init__(self, RL: rla, env, phyloss_flag, env_batch_size, fake_buffer_size) -> None:
+    def __init__(self, RL, env, phyloss_flag, env_batch_size, fake_buffer_size) -> None:
         super().__init__(RL, env, phyloss_flag, env_batch_size=env_batch_size, real_buffer_size=fake_buffer_size)
         self.real_buffer = BufferforRef(obs_dim=self.RL.obs_dim, act_dim=self.RL.act_dim, size=fake_buffer_size)
         self.RL.buffer = BufferforRef(obs_dim=self.RL.obs_dim, act_dim=self.RL.act_dim, size=self.RL.buffer.max_size)
@@ -55,21 +53,33 @@ class phyburgers(dyna):
 
 
 if __name__=='__main__':
-    # torch.set_default_tensor_type('torch.cuda.FloatTensor')
+
+    from NN.RL.base import MLPActor, MLPQ
+    from RLalgo.td3 import TD3
+    import torch.nn as nn
     import random
+    import os
+
     random.seed(0)
     torch.manual_seed(0)
     np.random.seed(0)
+    
     RL_batchsize=120
     env_batchsize=120
     realenv = burgers()
     fakeenv = model.fake_burgers_env(env_batchsize,ratio=1)
-    os.chdir('/home/lxy/store/RL/burgers/td3')
-    # torch.autograd.set_detect_anomaly(True)
-    RLinp = {"env":fakeenv,'actor_critic':core.MLPTD3,
-            'ac_kwargs':dict(hidden_sizes=[256]*2,act_space_type='c'),
-            'ep_type':'inf','max_ep_len':60}
-    RL = rla.td3.TD3(**RLinp) 
+    #os.chdir('/home/lxy/store/RL/burgers/td3')
+    
+    RLinp = {"env":fakeenv,
+            'Actor':MLPActor,
+            "Q":MLPQ, 
+            'act_space_type':'c',
+            'a_kwargs':dict(activation=nn.ReLU,
+                        hidden_sizes=[256]*2,
+                        output_activation=nn.Tanh),
+            'ep_type':'inf',
+            'max_ep_len':60}
+    RL = TD3(**RLinp) 
     mb = phyburgers(RL,realenv,False,env_batchsize,50000)
     
     mb(150,240,240,120,update_every=120 ,RL_batch_size=RL_batchsize,
